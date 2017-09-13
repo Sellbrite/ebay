@@ -5,7 +5,7 @@ module Ebay
     class Base
       include XML::Mapping
       include Ebay::Types
-      attr_accessor :auth_token, :username, :password
+      attr_accessor :auth_token, :username, :password, :using_oauth2
       object_node :requester_credentials, 'RequesterCredentials', :class => XMLRequesterCredentials, :optional => true
 
       def call_name
