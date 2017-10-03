@@ -3,6 +3,7 @@ module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
     #  text_node :commenting_user, 'CommentingUser', :optional => true
+    #  text_node :feedback_rating_star, 'FeedbackRatingStar', :optional => true
     #  numeric_node :commenting_user_score, 'CommentingUserScore', :optional => true
     #  text_node :comment_text, 'CommentText', :optional => true
     #  time_node :comment_time, 'CommentTime', :optional => true
@@ -26,6 +27,7 @@ module Ebay # :nodoc:
       include Initializer
       root_element_name 'FeedbackDetail'
       text_node :commenting_user, 'CommentingUser', :optional => true
+      text_node :feedback_rating_star, 'FeedbackRatingStar', :optional => true
       numeric_node :commenting_user_score, 'CommentingUserScore', :optional => true
       text_node :comment_text, 'CommentText', :optional => true
       time_node :comment_time, 'CommentTime', :optional => true

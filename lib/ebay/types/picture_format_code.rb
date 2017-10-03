@@ -5,6 +5,7 @@ module Ebay # :nodoc:
       extend Enumeration
       JPG = 'JPG'
       GIF = 'GIF'
+      PNG = 'PNG'
     end
   end
 end

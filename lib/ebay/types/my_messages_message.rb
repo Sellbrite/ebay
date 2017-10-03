@@ -31,7 +31,7 @@ module Ebay # :nodoc:
     #  boolean_node :high_priority, 'HighPriority', 'true', 'false', :optional => true
     #  time_node :item_end_time, 'ItemEndTime', :optional => true
     #  text_node :item_title, 'ItemTitle', :optional => true
-    #  array_node :message_medias, 'MessageMedia', :class => MessageMedia, :default_value => []
+    #  array_node :message_media, 'MessageMedia', :class => MessageMedia, :default_value => []
     class MyMessagesMessage
       include XML::Mapping
       include Initializer
@@ -61,7 +61,7 @@ module Ebay # :nodoc:
       boolean_node :high_priority, 'HighPriority', 'true', 'false', :optional => true
       time_node :item_end_time, 'ItemEndTime', :optional => true
       text_node :item_title, 'ItemTitle', :optional => true
-      array_node :message_medias, 'MessageMedia', :class => MessageMedia, :default_value => []
+      array_node :message_media, 'MessageMedia', :class => MessageMedia, :default_value => []
     end
   end
 end

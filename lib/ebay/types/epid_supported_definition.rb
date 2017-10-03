@@ -2,10 +2,10 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    class InsuranceDetails
+    class EpidSupportedDefinition
       include XML::Mapping
       include Initializer
-      root_element_name 'InsuranceDetails'
+      root_element_name 'EpidSupportedDefinition'
     end
   end
 end

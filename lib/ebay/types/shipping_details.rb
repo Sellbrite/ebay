@@ -3,7 +3,6 @@ require 'ebay/types/sales_tax'
 require 'ebay/types/shipping_service_options'
 require 'ebay/types/international_shipping_service_options'
 require 'ebay/types/tax_jurisdiction'
-require 'ebay/types/insurance_details'
 require 'ebay/types/flat_shipping_discount'
 require 'ebay/types/calculated_shipping_discount'
 require 'ebay/types/promotional_shipping_discount_details'
@@ -18,8 +17,6 @@ module Ebay # :nodoc:
     #  boolean_node :global_shipping, 'GlobalShipping', 'true', 'false', :optional => true
     #  object_node :calculated_shipping_rate, 'CalculatedShippingRate', :class => CalculatedShippingRate, :optional => true
     #  boolean_node :change_payment_instructions, 'ChangePaymentInstructions', 'true', 'false', :optional => true
-    #  money_node :insurance_fee, 'InsuranceFee', :optional => true
-    #  text_node :insurance_option, 'InsuranceOption', :optional => true
     #  boolean_node :insurance_wanted, 'InsuranceWanted', 'true', 'false', :optional => true
     #  boolean_node :payment_edited, 'PaymentEdited', 'true', 'false', :optional => true
     #  text_node :payment_instructions, 'PaymentInstructions', :optional => true
@@ -35,8 +32,6 @@ module Ebay # :nodoc:
     #  boolean_node :get_it_fast, 'GetItFast', 'true', 'false', :optional => true
     #  text_node :shipping_service_used, 'ShippingServiceUsed', :optional => true
     #  money_node :default_shipping_cost, 'DefaultShippingCost', :optional => true
-    #  object_node :insurance_details, 'InsuranceDetails', :class => InsuranceDetails, :optional => true
-    #  object_node :international_insurance_details, 'InternationalInsuranceDetails', :class => InsuranceDetails, :optional => true
     #  text_node :shipping_discount_profile_id, 'ShippingDiscountProfileID', :optional => true
     #  object_node :flat_shipping_discount, 'FlatShippingDiscount', :class => FlatShippingDiscount, :optional => true
     #  object_node :calculated_shipping_discount, 'CalculatedShippingDiscount', :class => CalculatedShippingDiscount, :optional => true
@@ -60,8 +55,6 @@ module Ebay # :nodoc:
       boolean_node :global_shipping, 'GlobalShipping', 'true', 'false', :optional => true
       object_node :calculated_shipping_rate, 'CalculatedShippingRate', :class => CalculatedShippingRate, :optional => true
       boolean_node :change_payment_instructions, 'ChangePaymentInstructions', 'true', 'false', :optional => true
-      money_node :insurance_fee, 'InsuranceFee', :optional => true
-      text_node :insurance_option, 'InsuranceOption', :optional => true
       boolean_node :insurance_wanted, 'InsuranceWanted', 'true', 'false', :optional => true
       boolean_node :payment_edited, 'PaymentEdited', 'true', 'false', :optional => true
       text_node :payment_instructions, 'PaymentInstructions', :optional => true
@@ -77,8 +70,6 @@ module Ebay # :nodoc:
       boolean_node :get_it_fast, 'GetItFast', 'true', 'false', :optional => true
       text_node :shipping_service_used, 'ShippingServiceUsed', :optional => true
       money_node :default_shipping_cost, 'DefaultShippingCost', :optional => true
-      object_node :insurance_details, 'InsuranceDetails', :class => InsuranceDetails, :optional => true
-      object_node :international_insurance_details, 'InternationalInsuranceDetails', :class => InsuranceDetails, :optional => true
       text_node :shipping_discount_profile_id, 'ShippingDiscountProfileID', :optional => true
       object_node :flat_shipping_discount, 'FlatShippingDiscount', :class => FlatShippingDiscount, :optional => true
       object_node :calculated_shipping_discount, 'CalculatedShippingDiscount', :class => CalculatedShippingDiscount, :optional => true

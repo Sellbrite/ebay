@@ -15,7 +15,6 @@ module Ebay # :nodoc:
     #  text_node :warranty_type, 'WarrantyType', :optional => true
     #  text_node :warranty_duration_option, 'WarrantyDurationOption', :optional => true
     #  text_node :warranty_duration, 'WarrantyDuration', :optional => true
-    #  text_node :ean, 'EAN', :optional => true
     #  text_node :shipping_cost_paid_by_option, 'ShippingCostPaidByOption', :optional => true
     #  text_node :shipping_cost_paid_by, 'ShippingCostPaidBy', :optional => true
     #  text_node :restocking_fee_value, 'RestockingFeeValue', :optional => true
@@ -38,7 +37,6 @@ module Ebay # :nodoc:
       text_node :warranty_type, 'WarrantyType', :optional => true
       text_node :warranty_duration_option, 'WarrantyDurationOption', :optional => true
       text_node :warranty_duration, 'WarrantyDuration', :optional => true
-      text_node :ean, 'EAN', :optional => true
       text_node :shipping_cost_paid_by_option, 'ShippingCostPaidByOption', :optional => true
       text_node :shipping_cost_paid_by, 'ShippingCostPaidBy', :optional => true
       text_node :restocking_fee_value, 'RestockingFeeValue', :optional => true

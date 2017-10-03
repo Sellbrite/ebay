@@ -15,7 +15,7 @@ module Ebay # :nodoc:
     #  text_node :body, 'Body', :optional => true
     #  text_node :message_id, 'MessageID', :optional => true
     #  text_node :parent_message_id, 'ParentMessageID', :optional => true
-    #  array_node :message_medias, 'MessageMedia', :class => MessageMedia, :default_value => []
+    #  array_node :message_media, 'MessageMedia', :class => MessageMedia, :default_value => []
     class MemberMessage
       include XML::Mapping
       include Initializer
@@ -32,7 +32,7 @@ module Ebay # :nodoc:
       text_node :body, 'Body', :optional => true
       text_node :message_id, 'MessageID', :optional => true
       text_node :parent_message_id, 'ParentMessageID', :optional => true
-      array_node :message_medias, 'MessageMedia', :class => MessageMedia, :default_value => []
+      array_node :message_media, 'MessageMedia', :class => MessageMedia, :default_value => []
     end
   end
 end
