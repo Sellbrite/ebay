@@ -66,11 +66,13 @@ module Ebay # :nodoc:
     #  money_node :buyer_guarantee_price, 'BuyerGuaranteePrice', :optional => true
     #  object_node :variation, 'Variation', :class => Variation, :optional => true
     #  text_node :buyer_checkout_message, 'BuyerCheckoutMessage', :optional => true
+    #  money_node :total_transaction_price, 'TotalTransactionPrice', :optional => true
     #  object_node :taxes, 'Taxes', :class => Taxes, :optional => true
     #  boolean_node :bundle_purchase, 'BundlePurchase', 'true', 'false', :optional => true
     #  money_node :actual_shipping_cost, 'ActualShippingCost', :optional => true
     #  money_node :actual_handling_cost, 'ActualHandlingCost', :optional => true
     #  text_node :order_line_item_id, 'OrderLineItemID', :optional => true
+    #  text_node :ebay_payment_id, 'eBayPaymentID', :optional => true
     #  object_node :payment_hold_details, 'PaymentHoldDetails', :class => PaymentHoldDetail, :optional => true
     #  object_node :seller_discounts, 'SellerDiscounts', :class => SellerDiscounts, :optional => true
     #  money_node :refund_amount, 'RefundAmount', :optional => true
@@ -93,6 +95,8 @@ module Ebay # :nodoc:
     #  object_node :gift_summary, 'GiftSummary', :class => GiftSummary, :optional => true
     #  object_node :digital_delivery_selected, 'DigitalDeliverySelected', :class => DigitalDeliverySelected, :optional => true
     #  boolean_node :gift, 'Gift', 'true', 'false', :optional => true
+    #  boolean_node :guaranteed_shipping, 'GuaranteedShipping', 'true', 'false', :optional => true
+    #  boolean_node :guaranteed_delivery, 'GuaranteedDelivery', 'true', 'false', :optional => true
     class Transaction
       include XML::Mapping
       include Initializer
@@ -138,11 +142,13 @@ module Ebay # :nodoc:
       money_node :buyer_guarantee_price, 'BuyerGuaranteePrice', :optional => true
       object_node :variation, 'Variation', :class => Variation, :optional => true
       text_node :buyer_checkout_message, 'BuyerCheckoutMessage', :optional => true
+      money_node :total_transaction_price, 'TotalTransactionPrice', :optional => true
       object_node :taxes, 'Taxes', :class => Taxes, :optional => true
       boolean_node :bundle_purchase, 'BundlePurchase', 'true', 'false', :optional => true
       money_node :actual_shipping_cost, 'ActualShippingCost', :optional => true
       money_node :actual_handling_cost, 'ActualHandlingCost', :optional => true
       text_node :order_line_item_id, 'OrderLineItemID', :optional => true
+      text_node :ebay_payment_id, 'eBayPaymentID', :optional => true
       object_node :payment_hold_details, 'PaymentHoldDetails', :class => PaymentHoldDetail, :optional => true
       object_node :seller_discounts, 'SellerDiscounts', :class => SellerDiscounts, :optional => true
       money_node :refund_amount, 'RefundAmount', :optional => true
@@ -165,6 +171,8 @@ module Ebay # :nodoc:
       object_node :gift_summary, 'GiftSummary', :class => GiftSummary, :optional => true
       object_node :digital_delivery_selected, 'DigitalDeliverySelected', :class => DigitalDeliverySelected, :optional => true
       boolean_node :gift, 'Gift', 'true', 'false', :optional => true
+      boolean_node :guaranteed_shipping, 'GuaranteedShipping', 'true', 'false', :optional => true
+      boolean_node :guaranteed_delivery, 'GuaranteedDelivery', 'true', 'false', :optional => true
     end
   end
 end

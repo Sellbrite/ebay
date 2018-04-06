@@ -130,6 +130,8 @@ module Ebay # :nodoc:
       AdditionalCompatibilityEnabled = 'AdditionalCompatibilityEnabled'
       PickupDropOffEnabled = 'PickupDropOffEnabled'
       DigitalGoodDeliveryEnabled = 'DigitalGoodDeliveryEnabled'
+      EpidSupported = 'EpidSupported'
+      KTypeSupported = 'KTypeSupported'
     end
   end
 end

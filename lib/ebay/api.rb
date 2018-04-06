@@ -50,7 +50,7 @@ module Ebay #:nodoc:
       alias_method :ru_name=, :runame=
     end
 
-    attr_reader :auth_token, :site_id
+    attr_reader :auth_token, :site_id, :using_oauth2
 
     self.sandbox_url = 'https://api.sandbox.ebay.com/ws/api.dll'
     self.production_url = 'https://api.ebay.com/ws/api.dll'
@@ -124,6 +124,7 @@ module Ebay #:nodoc:
       @format = options[:format] || :object
       @auth_token = options[:auth_token] || self.class.auth_token
       @site_id = options[:site_id] || self.class.site_id
+      @using_oauth2 = options[:using_oauth2] || false
     end
 
     # Returns the URL used to sign-in to eBay to fetch a user token
@@ -135,6 +136,7 @@ module Ebay #:nodoc:
     def commit(request_class, params)
       format = params.delete(:format) || @format
 
+      params[:using_oauth2] = using_oauth2
       params[:username] = username
       params[:password] = password
       params[:auth_token] = auth_token
@@ -157,7 +159,7 @@ module Ebay #:nodoc:
     end
 
     def build_headers(call_name)
-      {
+      headers = {
         'X-EBAY-API-COMPATIBILITY-LEVEL' => schema_version.to_s,
         'X-EBAY-API-SESSION-CERTIFICATE' => "#{dev_id};#{app_id};#{cert}",
         'X-EBAY-API-DEV-NAME' => dev_id.to_s,
@@ -168,6 +170,8 @@ module Ebay #:nodoc:
         'Content-Type' => 'text/xml',
         'Accept-Encoding' => 'gzip'
       }
+      headers['X-EBAY-API-IAF-TOKEN'] = auth_token if using_oauth2
+      headers
     end
 
     def build_body(request)

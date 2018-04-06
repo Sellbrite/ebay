@@ -1,10 +1,10 @@
 require 'ebay/types/brand_mpn'
 require 'ebay/types/ticket_listing_details'
+require 'ebay/types/name_value_list'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
-    #  text_node :product_id, 'ProductID', :optional => true
     #  boolean_node :include_stock_photo_url, 'IncludeStockPhotoURL', 'true', 'false', :optional => true
     #  boolean_node :use_stock_photo_url_as_gallery, 'UseStockPhotoURLAsGallery', 'true', 'false', :optional => true
     #  text_node :stock_photo_url, 'StockPhotoURL', :optional => true
@@ -20,11 +20,11 @@ module Ebay # :nodoc:
     #  object_node :ticket_listing_details, 'TicketListingDetails', :class => TicketListingDetails, :optional => true
     #  boolean_node :use_first_product, 'UseFirstProduct', 'true', 'false', :optional => true
     #  boolean_node :include_ebay_product_details, 'IncludeeBayProductDetails', 'true', 'false', :optional => true
+    #  array_node :name_value_lists, 'NameValueList', :class => NameValueList, :default_value => []
     class ProductListingDetails
       include XML::Mapping
       include Initializer
       root_element_name 'ProductListingDetails'
-      text_node :product_id, 'ProductID', :optional => true
       boolean_node :include_stock_photo_url, 'IncludeStockPhotoURL', 'true', 'false', :optional => true
       boolean_node :use_stock_photo_url_as_gallery, 'UseStockPhotoURLAsGallery', 'true', 'false', :optional => true
       text_node :stock_photo_url, 'StockPhotoURL', :optional => true
@@ -40,6 +40,7 @@ module Ebay # :nodoc:
       object_node :ticket_listing_details, 'TicketListingDetails', :class => TicketListingDetails, :optional => true
       boolean_node :use_first_product, 'UseFirstProduct', 'true', 'false', :optional => true
       boolean_node :include_ebay_product_details, 'IncludeeBayProductDetails', 'true', 'false', :optional => true
+      array_node :name_value_lists, 'NameValueList', :class => NameValueList, :default_value => []
     end
   end
 end

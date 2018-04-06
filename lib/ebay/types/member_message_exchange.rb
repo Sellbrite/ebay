@@ -11,7 +11,7 @@ module Ebay # :nodoc:
     #  text_node :message_status, 'MessageStatus', :optional => true
     #  time_node :creation_date, 'CreationDate', :optional => true
     #  time_node :last_modified_date, 'LastModifiedDate', :optional => true
-    #  array_node :message_medias, 'MessageMedia', :class => MessageMedia, :default_value => []
+    #  array_node :message_media, 'MessageMedia', :class => MessageMedia, :default_value => []
     class MemberMessageExchange
       include XML::Mapping
       include Initializer
@@ -22,7 +22,7 @@ module Ebay # :nodoc:
       text_node :message_status, 'MessageStatus', :optional => true
       time_node :creation_date, 'CreationDate', :optional => true
       time_node :last_modified_date, 'LastModifiedDate', :optional => true
-      array_node :message_medias, 'MessageMedia', :class => MessageMedia, :default_value => []
+      array_node :message_media, 'MessageMedia', :class => MessageMedia, :default_value => []
     end
   end
 end

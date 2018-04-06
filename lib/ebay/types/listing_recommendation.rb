@@ -9,7 +9,7 @@ module Ebay # :nodoc:
     #  text_node :code, 'Code', :optional => true
     #  value_array_node :values, 'Value', :default_value => []
     #  text_node :message, 'Message', :optional => true
-    #  array_node :metadatas, 'Metadata', :class => Metadata, :default_value => []
+    #  array_node :metadata, 'Metadata', :class => Metadata, :default_value => []
     class ListingRecommendation
       include XML::Mapping
       include Initializer
@@ -24,7 +24,7 @@ end
       text_node :code, 'Code', :optional => true
       value_array_node :values, 'Value', :default_value => []
       text_node :message, 'Message', :optional => true
-      array_node :metadatas, 'Metadata', :class => Metadata, :default_value => []
+      array_node :metadata, 'Metadata', :class => Metadata, :default_value => []
     end
   end
 end

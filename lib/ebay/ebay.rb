@@ -33,7 +33,7 @@ if File.exists?(File.dirname(__FILE__) + '/requests.rb') && File.exists?(File.di
   Ebay::Requests::Abstract.class_eval do
     # set the RequesterCredentials on all requests
     def requester_credentials
-      Ebay::Types::XMLRequesterCredentials.new(:ebay_auth_token => auth_token)
+      Ebay::Types::XMLRequesterCredentials.new(:ebay_auth_token => auth_token) unless using_oauth2
     end
   end
 end
