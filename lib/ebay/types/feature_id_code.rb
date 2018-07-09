@@ -112,7 +112,6 @@ module Ebay # :nodoc:
       ConditionEnabled = 'ConditionEnabled'
       ConditionValues = 'ConditionValues'
       ValueCategory = 'ValueCategory'
-      ProductCreationEnabled = 'ProductCreationEnabled'
       EANEnabled = 'EANEnabled'
       ISBNEnabled = 'ISBNEnabled'
       UPCEnabled = 'UPCEnabled'
@@ -132,6 +131,7 @@ module Ebay # :nodoc:
       DigitalGoodDeliveryEnabled = 'DigitalGoodDeliveryEnabled'
       EpidSupported = 'EpidSupported'
       KTypeSupported = 'KTypeSupported'
+      ProductRequiredEnabled = 'ProductRequiredEnabled'
     end
   end
 end

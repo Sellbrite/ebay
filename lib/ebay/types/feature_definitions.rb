@@ -130,6 +130,7 @@ require 'ebay/types/pickup_drop_off_enabled_definition'
 require 'ebay/types/digital_good_delivery_enabled_definition'
 require 'ebay/types/epid_supported_definition'
 require 'ebay/types/k_type_supported_definition'
+require 'ebay/types/product_required_enabled_definition'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -268,6 +269,7 @@ module Ebay # :nodoc:
     #  object_node :digital_good_delivery_enabled, 'DigitalGoodDeliveryEnabled', :class => DigitalGoodDeliveryEnabledDefinition, :optional => true
     #  object_node :epid_supported, 'EpidSupported', :class => EpidSupportedDefinition, :optional => true
     #  object_node :k_type_supported, 'KTypeSupported', :class => KTypeSupportedDefinition, :optional => true
+    #  object_node :product_required_enabled, 'ProductRequiredEnabled', :class => ProductRequiredEnabledDefinition, :optional => true
     class FeatureDefinitions
       include XML::Mapping
       include Initializer
@@ -406,6 +408,7 @@ module Ebay # :nodoc:
       object_node :digital_good_delivery_enabled, 'DigitalGoodDeliveryEnabled', :class => DigitalGoodDeliveryEnabledDefinition, :optional => true
       object_node :epid_supported, 'EpidSupported', :class => EpidSupportedDefinition, :optional => true
       object_node :k_type_supported, 'KTypeSupported', :class => KTypeSupportedDefinition, :optional => true
+      object_node :product_required_enabled, 'ProductRequiredEnabled', :class => ProductRequiredEnabledDefinition, :optional => true
     end
   end
 end

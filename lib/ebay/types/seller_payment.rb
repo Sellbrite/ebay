@@ -7,7 +7,6 @@ module Ebay # :nodoc:
     #  text_node :order_id, 'OrderID', :optional => true
     #  text_node :seller_inventory_id, 'SellerInventoryID', :optional => true
     #  text_node :private_notes, 'PrivateNotes', :optional => true
-    #  
     #  text_node :title, 'Title', :optional => true
     #  text_node :payment_type, 'PaymentType', :optional => true
     #  money_node :transaction_price, 'TransactionPrice', :optional => true
@@ -25,7 +24,6 @@ module Ebay # :nodoc:
       text_node :order_id, 'OrderID', :optional => true
       text_node :seller_inventory_id, 'SellerInventoryID', :optional => true
       text_node :private_notes, 'PrivateNotes', :optional => true
-      
       text_node :title, 'Title', :optional => true
       text_node :payment_type, 'PaymentType', :optional => true
       money_node :transaction_price, 'TransactionPrice', :optional => true

@@ -17,7 +17,6 @@ module Ebay # :nodoc:
     #  text_node :query_keywords, 'QueryKeywords', :optional => true
     #  array_node :characteristic_set_ids, 'CharacteristicSetIDs', :class => CharacteristicSetIDs, :default_value => []
     #  text_node :product_reference_id, 'ProductReferenceID', :optional => true
-    #  
     class ProductSearch
       include XML::Mapping
       include Initializer
@@ -34,7 +33,6 @@ module Ebay # :nodoc:
       text_node :query_keywords, 'QueryKeywords', :optional => true
       array_node :characteristic_set_ids, 'CharacteristicSetIDs', :class => CharacteristicSetIDs, :default_value => []
       text_node :product_reference_id, 'ProductReferenceID', :optional => true
-      
     end
   end
 end

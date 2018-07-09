@@ -140,6 +140,7 @@ module Ebay # :nodoc:
     #  boolean_node :digital_good_delivery_enabled, 'DigitalGoodDeliveryEnabled', 'true', 'false', :optional => true
     #  boolean_node :epid_supported, 'EpidSupported', 'true', 'false', :optional => true
     #  boolean_node :k_type_supported, 'KTypeSupported', 'true', 'false', :optional => true
+    #  text_node :product_required_enabled, 'ProductRequiredEnabled', :optional => true
     class SiteDefaults
       include XML::Mapping
       include Initializer
@@ -278,6 +279,7 @@ module Ebay # :nodoc:
       boolean_node :digital_good_delivery_enabled, 'DigitalGoodDeliveryEnabled', 'true', 'false', :optional => true
       boolean_node :epid_supported, 'EpidSupported', 'true', 'false', :optional => true
       boolean_node :k_type_supported, 'KTypeSupported', 'true', 'false', :optional => true
+      text_node :product_required_enabled, 'ProductRequiredEnabled', :optional => true
     end
   end
 end

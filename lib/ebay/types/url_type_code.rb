@@ -14,6 +14,9 @@ module Ebay # :nodoc:
       SmallLogoURL = 'SmallLogoURL'
       MediumLogoURL = 'MediumLogoURL'
       LargeLogoURL = 'LargeLogoURL'
+      CreateProductURL = 'CreateProductUrl'
+      AppealProductURL = 'AppealProductUrl'
+      ManageProductURL = 'ManageProductUrl'
     end
   end
 end

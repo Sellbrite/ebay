@@ -7,6 +7,9 @@ module Ebay # :nodoc:
     #  numeric_node :min_values, 'MinValues', :optional => true
     #  numeric_node :max_values, 'MaxValues', :optional => true
     #  text_node :selection_mode, 'SelectionMode', :optional => true
+    #  text_node :aspect_usage, 'AspectUsage', :optional => true
+    #  numeric_node :max_value_length, 'MaxValueLength', :optional => true
+    #  text_node :product_required, 'ProductRequired', :optional => true
     #  numeric_node :confidence, 'Confidence', :optional => true
     #  array_node :relationships, 'Relationship', :class => NameValueRelationship, :default_value => []
     #  text_node :variation_picture, 'VariationPicture', :optional => true
@@ -20,6 +23,9 @@ module Ebay # :nodoc:
       numeric_node :min_values, 'MinValues', :optional => true
       numeric_node :max_values, 'MaxValues', :optional => true
       text_node :selection_mode, 'SelectionMode', :optional => true
+      text_node :aspect_usage, 'AspectUsage', :optional => true
+      numeric_node :max_value_length, 'MaxValueLength', :optional => true
+      text_node :product_required, 'ProductRequired', :optional => true
       numeric_node :confidence, 'Confidence', :optional => true
       array_node :relationships, 'Relationship', :class => NameValueRelationship, :default_value => []
       text_node :variation_picture, 'VariationPicture', :optional => true

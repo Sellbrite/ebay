@@ -38,11 +38,10 @@ namespace :schema do
     puts 'Updating the eBay schema'
   
     folder = File.dirname(__FILE__) + "/lib/ebay/schema"
-    url = 'http://developer.ebay.com/webservices/latest/ebaySvc.xsd'
+    url = 'https://developer.ebay.com/webservices/latest/ebaySvc.xsd'
 
     cd folder do
-      rm_f 'ebaySvc.xsd'
-      system("wget #{url}")
+      system("curl #{url} > ebaySvc.xsd")
     end
   end
   

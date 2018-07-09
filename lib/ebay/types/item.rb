@@ -75,7 +75,6 @@ module Ebay # :nodoc:
     #  value_array_node :payment_methods, 'PaymentMethods', :default_value => []
     #  text_node :paypal_email_address, 'PayPalEmailAddress', :optional => true
     #  object_node :primary_category, 'PrimaryCategory', :class => Category, :optional => true
-    #  boolean_node :private_listing, 'PrivateListing', 'true', 'false', :optional => true
     #  object_node :product_listing_details, 'ProductListingDetails', :class => ProductListingDetails, :optional => true
     #  numeric_node :quantity, 'Quantity', :optional => true
     #  text_node :private_notes, 'PrivateNotes', :optional => true
@@ -188,6 +187,7 @@ module Ebay # :nodoc:
     #  boolean_node :ebay_plus, 'eBayPlus', 'true', 'false', :optional => true
     #  boolean_node :ebay_plus_eligible, 'eBayPlusEligible', 'true', 'false', :optional => true
     #  boolean_node :e_mail_delivery_available, 'eMailDeliveryAvailable', 'true', 'false', :optional => true
+    #  boolean_node :is_secure_description, 'IsSecureDescription', 'true', 'false', :optional => true
     class Item
       include XML::Mapping
       include Initializer
@@ -224,7 +224,6 @@ module Ebay # :nodoc:
       value_array_node :payment_methods, 'PaymentMethods', :default_value => []
       text_node :paypal_email_address, 'PayPalEmailAddress', :optional => true
       object_node :primary_category, 'PrimaryCategory', :class => Category, :optional => true
-      boolean_node :private_listing, 'PrivateListing', 'true', 'false', :optional => true
       object_node :product_listing_details, 'ProductListingDetails', :class => ProductListingDetails, :optional => true
       numeric_node :quantity, 'Quantity', :optional => true
       text_node :private_notes, 'PrivateNotes', :optional => true
@@ -337,6 +336,7 @@ module Ebay # :nodoc:
       boolean_node :ebay_plus, 'eBayPlus', 'true', 'false', :optional => true
       boolean_node :ebay_plus_eligible, 'eBayPlusEligible', 'true', 'false', :optional => true
       boolean_node :e_mail_delivery_available, 'eMailDeliveryAvailable', 'true', 'false', :optional => true
+      boolean_node :is_secure_description, 'IsSecureDescription', 'true', 'false', :optional => true
     end
   end
 end
