@@ -50,7 +50,7 @@ module Ebay #:nodoc:
       alias_method :ru_name=, :runame=
     end
 
-    attr_reader :auth_token, :site_id, :using_oauth2
+    attr_reader :auth_token, :site_id, :using_oauth2, :keyset
 
     self.sandbox_url = 'https://api.sandbox.ebay.com/ws/api.dll'
     self.production_url = 'https://api.ebay.com/ws/api.dll'
@@ -121,15 +121,16 @@ module Ebay #:nodoc:
     # at the time of creation. Ex: Canada(Site 2) with another user's auth token.
     #   ebay = Ebay::Api.new(:site_id => 2, :auth_token => 'TEST')
     def initialize(options = {})
-      @format = options[:format] || :object
-      @auth_token = options[:auth_token] || self.class.auth_token
-      @site_id = options[:site_id] || self.class.site_id
+      @format       = options[:format] || :object
+      @auth_token   = options[:auth_token] || self.class.auth_token
+      @site_id      = options[:site_id] || self.class.site_id
       @using_oauth2 = options[:using_oauth2] || false
+      @keyset       = options[:keyset] || {}
     end
 
     # Returns the URL used to sign-in to eBay to fetch a user token
     def sign_in_url(session_id)
-      "https://signin.#{"sandbox." if self.class.using_sandbox?}ebay.com/ws/eBayISAPI.dll?SignIn&RuName=#{self.class.ru_name}&SessID=#{session_id}"
+      "https://signin.#{"sandbox." if self.class.using_sandbox?}ebay.com/ws/eBayISAPI.dll?SignIn&RuName=#{keyset[:runame] || self.class.ru_name}&SessID=#{session_id}"
     end
 
     private
@@ -161,10 +162,10 @@ module Ebay #:nodoc:
     def build_headers(call_name)
       headers = {
         'X-EBAY-API-COMPATIBILITY-LEVEL' => schema_version.to_s,
-        'X-EBAY-API-SESSION-CERTIFICATE' => "#{dev_id};#{app_id};#{cert}",
-        'X-EBAY-API-DEV-NAME' => dev_id.to_s,
-        'X-EBAY-API-APP-NAME' => app_id.to_s,
-        'X-EBAY-API-CERT-NAME' => cert.to_s,
+        'X-EBAY-API-SESSION-CERTIFICATE' => "#{(keyset[:dev_id ] || dev_id)};#{(keyset[:app_id] || app_id)};#{(keyset[:cert] || cert)}",
+        'X-EBAY-API-DEV-NAME' => (keyset[:dev_id] || dev_id).to_s,
+        'X-EBAY-API-APP-NAME' => (keyset[:app_id] || app_id).to_s,
+        'X-EBAY-API-CERT-NAME' => (keyset[:cert] || cert).to_s,
         'X-EBAY-API-CALL-NAME' => call_name.to_s,
         'X-EBAY-API-SITEID' => site_id.to_s,
         'Content-Type' => 'text/xml',
