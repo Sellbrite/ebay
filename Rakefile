@@ -36,20 +36,17 @@ namespace :schema do
   desc 'Get the latest version of the eBay XML schema'
   task :update do
     puts 'Updating the eBay schema'
-  
     folder = File.dirname(__FILE__) + "/lib/ebay/schema"
     url = 'https://developer.ebay.com/webservices/latest/ebaySvc.xsd'
-
     cd folder do
       system("curl #{url} > ebaySvc.xsd")
     end
   end
-  
+
   desc "Update the schema version"
   task :update_version do
     schema = File.dirname(__FILE__) + '/lib/ebay/schema/ebaySvc.xsd'
     # Update the schema version string
-    
     File.read(schema) =~ /Version (\d+)/m
     if version = $1
       version_file_path = File.dirname(__FILE__) + "/lib/ebay/schema/version.rb"
@@ -62,7 +59,36 @@ namespace :schema do
       raise "Unable to parse the version from the schema"
     end
   end
-  
+
+  desc "Sellbrite configs"
+  task :update_sellbrite do
+    desc 'Always make some nodes optional'
+    schema = File.dirname(__FILE__) + '/lib/ebay/schema/ebaySvc.xsd'
+    overrides = %w(
+      ShowBidderNoticePreferences
+      ShowCombinedPaymentPreferences
+      ShowCrossPromotionPreferences
+      ShowSellerPaymentPreferences
+      ShowSellerProfilePreferences
+      ShippingDiscount
+      ItemRevised
+      AllowPaymentEdit
+      CheckoutEnabled
+      CIPBankAccountStored
+      GoodStanding
+      QualifiesForB2BVAT
+      StoreOwner
+      StoreCategoryID
+      StoreCategory2ID
+    )
+    text = File.read(schema)
+    overrides.each do |override|
+      match   = /(?!.*minOccur.*$)(element.*"#{override}")(.*)(>)/
+      replace = '\1\2 minOccurs="0"\3'
+      text.gsub!(match,replace)
+    end
+    File.open(schema, "w") {|file| file.puts text }
+  end
 end
 
 namespace :classes do
