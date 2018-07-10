@@ -9,18 +9,18 @@ module Ebay # :nodoc:
   module Types # :nodoc:
     # == Attributes
     #  numeric_node :paisa_pay_status, 'PaisaPayStatus', :optional => true
-    #  boolean_node :allow_payment_edit, 'AllowPaymentEdit', 'true', 'false'
+    #  boolean_node :allow_payment_edit, 'AllowPaymentEdit', 'true', 'false', :optional => true
     #  text_node :billing_currency, 'BillingCurrency', :optional => true
-    #  boolean_node :checkout_enabled, 'CheckoutEnabled', 'true', 'false'
-    #  boolean_node :cip_bank_account_stored, 'CIPBankAccountStored', 'true', 'false'
-    #  boolean_node :good_standing, 'GoodStanding', 'true', 'false'
+    #  boolean_node :checkout_enabled, 'CheckoutEnabled', 'true', 'false', :optional => true
+    #  boolean_node :cip_bank_account_stored, 'CIPBankAccountStored', 'true', 'false', :optional => true
+    #  boolean_node :good_standing, 'GoodStanding', 'true', 'false', :optional => true
     #  text_node :merchandizing_pref, 'MerchandizingPref', :optional => true
-    #  boolean_node :qualifies_for_b2_bvat, 'QualifiesForB2BVAT', 'true', 'false'
+    #  boolean_node :qualifies_for_b2_bvat, 'QualifiesForB2BVAT', 'true', 'false', :optional => true
     #  text_node :seller_guarantee_level, 'SellerGuaranteeLevel', :optional => true
     #  text_node :seller_level, 'SellerLevel', :optional => true
     #  object_node :seller_payment_address, 'SellerPaymentAddress', :class => Address, :optional => true
     #  object_node :scheduling_info, 'SchedulingInfo', :class => SchedulingInfo, :optional => true
-    #  boolean_node :store_owner, 'StoreOwner', 'true', 'false'
+    #  boolean_node :store_owner, 'StoreOwner', 'true', 'false', :optional => true
     #  text_node :store_url, 'StoreURL', :optional => true
     #  text_node :seller_business_type, 'SellerBusinessType', :optional => true
     #  boolean_node :registered_business_seller, 'RegisteredBusinessSeller', 'true', 'false', :optional => true
@@ -46,18 +46,18 @@ module Ebay # :nodoc:
       include Initializer
       root_element_name 'Seller'
       numeric_node :paisa_pay_status, 'PaisaPayStatus', :optional => true
-      boolean_node :allow_payment_edit, 'AllowPaymentEdit', 'true', 'false'
+      boolean_node :allow_payment_edit, 'AllowPaymentEdit', 'true', 'false', :optional => true
       text_node :billing_currency, 'BillingCurrency', :optional => true
-      boolean_node :checkout_enabled, 'CheckoutEnabled', 'true', 'false'
-      boolean_node :cip_bank_account_stored, 'CIPBankAccountStored', 'true', 'false'
-      boolean_node :good_standing, 'GoodStanding', 'true', 'false'
+      boolean_node :checkout_enabled, 'CheckoutEnabled', 'true', 'false', :optional => true
+      boolean_node :cip_bank_account_stored, 'CIPBankAccountStored', 'true', 'false', :optional => true
+      boolean_node :good_standing, 'GoodStanding', 'true', 'false', :optional => true
       text_node :merchandizing_pref, 'MerchandizingPref', :optional => true
-      boolean_node :qualifies_for_b2_bvat, 'QualifiesForB2BVAT', 'true', 'false'
+      boolean_node :qualifies_for_b2_bvat, 'QualifiesForB2BVAT', 'true', 'false', :optional => true
       text_node :seller_guarantee_level, 'SellerGuaranteeLevel', :optional => true
       text_node :seller_level, 'SellerLevel', :optional => true
       object_node :seller_payment_address, 'SellerPaymentAddress', :class => Address, :optional => true
       object_node :scheduling_info, 'SchedulingInfo', :class => SchedulingInfo, :optional => true
-      boolean_node :store_owner, 'StoreOwner', 'true', 'false'
+      boolean_node :store_owner, 'StoreOwner', 'true', 'false', :optional => true
       text_node :store_url, 'StoreURL', :optional => true
       text_node :seller_business_type, 'SellerBusinessType', :optional => true
       boolean_node :registered_business_seller, 'RegisteredBusinessSeller', 'true', 'false', :optional => true
