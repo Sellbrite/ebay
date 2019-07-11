@@ -9,6 +9,7 @@ module Ebay # :nodoc:
       OtherListingError = 'OtherListingError'
       SellToHighBidder = 'SellToHighBidder'
       Sold = 'Sold'
+      ProductDeleted = 'ProductDeleted'
     end
   end
 end

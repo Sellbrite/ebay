@@ -112,6 +112,7 @@ module Ebay # :nodoc:
       ConditionEnabled = 'ConditionEnabled'
       ConditionValues = 'ConditionValues'
       ValueCategory = 'ValueCategory'
+      ProductCreationEnabled = 'ProductCreationEnabled'
       EANEnabled = 'EANEnabled'
       ISBNEnabled = 'ISBNEnabled'
       UPCEnabled = 'UPCEnabled'
@@ -132,6 +133,15 @@ module Ebay # :nodoc:
       EpidSupported = 'EpidSupported'
       KTypeSupported = 'KTypeSupported'
       ProductRequiredEnabled = 'ProductRequiredEnabled'
+      DomesticReturnsAcceptedValues = 'DomesticReturnsAcceptedValues'
+      InternationalReturnsAcceptedValues = 'InternationalReturnsAcceptedValues'
+      DomesticReturnsDurationValues = 'DomesticReturnsDurationValues'
+      InternationalReturnsDurationValues = 'InternationalReturnsDurationValues'
+      DomesticReturnsShipmentPayeeValues = 'DomesticReturnsShipmentPayeeValues'
+      InternationalReturnsShipmentPayeeValues = 'InternationalReturnsShipmentPayeeValues'
+      DomesticRefundMethodValues = 'DomesticRefundMethodValues'
+      InternationalRefundMethodValues = 'InternationalRefundMethodValues'
+      ReturnPolicyDescriptionEnabled = 'ReturnPolicyDescriptionEnabled'
     end
   end
 end

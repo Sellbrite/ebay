@@ -41,7 +41,6 @@ module Ebay # :nodoc:
     #  boolean_node :ebay_wiki_read_only, 'eBayWikiReadOnly', 'true', 'false', :optional => true
     #  numeric_node :tuv_level, 'TUVLevel', :optional => true
     #  text_node :vatid, 'VATID', :optional => true
-    #  boolean_node :motors_dealer, 'MotorsDealer', 'true', 'false', :optional => true
     #  text_node :seller_payment_method, 'SellerPaymentMethod', :optional => true
     #  object_node :bidding_summary, 'BiddingSummary', :class => BiddingSummary, :optional => true
     #  boolean_node :user_anonymized, 'UserAnonymized', 'true', 'false', :optional => true
@@ -91,7 +90,6 @@ module Ebay # :nodoc:
       boolean_node :ebay_wiki_read_only, 'eBayWikiReadOnly', 'true', 'false', :optional => true
       numeric_node :tuv_level, 'TUVLevel', :optional => true
       text_node :vatid, 'VATID', :optional => true
-      boolean_node :motors_dealer, 'MotorsDealer', 'true', 'false', :optional => true
       text_node :seller_payment_method, 'SellerPaymentMethod', :optional => true
       object_node :bidding_summary, 'BiddingSummary', :class => BiddingSummary, :optional => true
       boolean_node :user_anonymized, 'UserAnonymized', 'true', 'false', :optional => true

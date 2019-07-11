@@ -37,4 +37,5 @@ GoodStanding
 StoreOwner
 ShippingDiscount
 
+# bundle exec rake schema:update_sellbrite
 # bundle exec rake classes:generate #generates classes

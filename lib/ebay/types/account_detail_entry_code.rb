@@ -295,6 +295,16 @@ module Ebay # :nodoc:
       CreditUBIShippingLabel = 'CreditUBIShippingLabel'
       FeeeBayPlusSubscription = 'FeeeBayPlusSubscription'
       CrediteBayPlusSubscription = 'CrediteBayPlusSubscription'
+      PaymentIntermediationFee = 'PaymentIntermediationFee'
+      FeePaymentIntermediationRVI = 'FeePaymentIntermediationRVI'
+      FeePaymentIntermediationChargeback = 'FeePaymentIntermediationChargeback'
+      FeePaymentIntermediationChargebackRVI = 'FeePaymentIntermediationChargebackRVI'
+      SnadOutlierFinalValueFee = 'SnadOutlierFinalValueFee'
+      SnadOutlierFinalValueFeeOnShipping = 'SnadOutlierFinalValueFeeOnShipping'
+      HighlineSearchFee = 'HighlineSearchFee'
+      HighlineSearchFeeCredit = 'HighlineSearchFeeCredit'
+      SnadOutlierFinalValueFeeCredit = 'SnadOutlierFinalValueFeeCredit'
+      SnadOutlierFinalValueFeeOnShippingCredit = 'SnadOutlierFinalValueFeeOnShippingCredit'
     end
   end
 end
