@@ -6,6 +6,7 @@ module Ebay # :nodoc:
       SalesTax = 'SalesTax'
       ElectronicWasteRecyclingFee = 'ElectronicWasteRecyclingFee'
       TireRecyclingFee = 'TireRecyclingFee'
+      GST = 'GST'
     end
   end
 end

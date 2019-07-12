@@ -17,10 +17,6 @@ module Ebay # :nodoc:
     #  text_node :phone_country_prefix, 'PhoneCountryPrefix', :optional => true
     #  text_node :phone_area_or_city_code, 'PhoneAreaOrCityCode', :optional => true
     #  text_node :phone_local_number, 'PhoneLocalNumber', :optional => true
-    #  text_node :phone2_country_code, 'Phone2CountryCode', :optional => true
-    #  text_node :phone2_country_prefix, 'Phone2CountryPrefix', :optional => true
-    #  text_node :phone2_area_or_city_code, 'Phone2AreaOrCityCode', :optional => true
-    #  text_node :phone2_local_number, 'Phone2LocalNumber', :optional => true
     #  text_node :postal_code, 'PostalCode', :optional => true
     #  text_node :address_id, 'AddressID', :optional => true
     #  text_node :address_owner, 'AddressOwner', :optional => true
@@ -55,10 +51,6 @@ module Ebay # :nodoc:
       text_node :phone_country_prefix, 'PhoneCountryPrefix', :optional => true
       text_node :phone_area_or_city_code, 'PhoneAreaOrCityCode', :optional => true
       text_node :phone_local_number, 'PhoneLocalNumber', :optional => true
-      text_node :phone2_country_code, 'Phone2CountryCode', :optional => true
-      text_node :phone2_country_prefix, 'Phone2CountryPrefix', :optional => true
-      text_node :phone2_area_or_city_code, 'Phone2AreaOrCityCode', :optional => true
-      text_node :phone2_local_number, 'Phone2LocalNumber', :optional => true
       text_node :postal_code, 'PostalCode', :optional => true
       text_node :address_id, 'AddressID', :optional => true
       text_node :address_owner, 'AddressOwner', :optional => true

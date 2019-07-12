@@ -5,6 +5,7 @@ module Ebay # :nodoc:
       extend Enumeration
       SalesTax = 'SalesTax'
       WasteRecyclingFee = 'WasteRecyclingFee'
+      GST = 'GST'
     end
   end
 end

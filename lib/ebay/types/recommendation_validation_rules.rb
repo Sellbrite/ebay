@@ -10,6 +10,7 @@ module Ebay # :nodoc:
     #  text_node :aspect_usage, 'AspectUsage', :optional => true
     #  numeric_node :max_value_length, 'MaxValueLength', :optional => true
     #  text_node :product_required, 'ProductRequired', :optional => true
+    #  text_node :usage_constraint, 'UsageConstraint', :optional => true
     #  numeric_node :confidence, 'Confidence', :optional => true
     #  array_node :relationships, 'Relationship', :class => NameValueRelationship, :default_value => []
     #  text_node :variation_picture, 'VariationPicture', :optional => true
@@ -26,6 +27,7 @@ module Ebay # :nodoc:
       text_node :aspect_usage, 'AspectUsage', :optional => true
       numeric_node :max_value_length, 'MaxValueLength', :optional => true
       text_node :product_required, 'ProductRequired', :optional => true
+      text_node :usage_constraint, 'UsageConstraint', :optional => true
       numeric_node :confidence, 'Confidence', :optional => true
       array_node :relationships, 'Relationship', :class => NameValueRelationship, :default_value => []
       text_node :variation_picture, 'VariationPicture', :optional => true
