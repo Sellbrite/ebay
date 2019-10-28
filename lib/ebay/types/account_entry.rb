@@ -17,6 +17,7 @@ module Ebay # :nodoc:
     #  text_node :order_line_item_id, 'OrderLineItemID', :optional => true
     #  text_node :transaction_id, 'TransactionID', :optional => true
     #  boolean_node :received_top_rated_discount, 'ReceivedTopRatedDiscount', 'true', 'false', :optional => true
+    #  text_node :order_id, 'OrderId', :optional => true
     class AccountEntry
       include XML::Mapping
       include Initializer
@@ -36,6 +37,7 @@ module Ebay # :nodoc:
       text_node :order_line_item_id, 'OrderLineItemID', :optional => true
       text_node :transaction_id, 'TransactionID', :optional => true
       boolean_node :received_top_rated_discount, 'ReceivedTopRatedDiscount', 'true', 'false', :optional => true
+      text_node :order_id, 'OrderId', :optional => true
     end
   end
 end

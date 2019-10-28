@@ -114,7 +114,6 @@ module Ebay # :nodoc:
     #  text_node :sku, 'SKU', :optional => true
     #  object_node :search_details, 'SearchDetails', :class => SearchDetails, :optional => true
     #  text_node :postal_code, 'PostalCode', :optional => true
-    #  text_node :seller_inventory_id, 'SellerInventoryID', :optional => true
     #  object_node :picture_details, 'PictureDetails', :class => PictureDetails, :optional => true
     #  numeric_node :dispatch_time_max, 'DispatchTimeMax', :optional => true
     #  boolean_node :best_offer_enabled, 'BestOfferEnabled', 'true', 'false', :optional => true
@@ -260,7 +259,6 @@ module Ebay # :nodoc:
       text_node :sku, 'SKU', :optional => true
       object_node :search_details, 'SearchDetails', :class => SearchDetails, :optional => true
       text_node :postal_code, 'PostalCode', :optional => true
-      text_node :seller_inventory_id, 'SellerInventoryID', :optional => true
       object_node :picture_details, 'PictureDetails', :class => PictureDetails, :optional => true
       numeric_node :dispatch_time_max, 'DispatchTimeMax', :optional => true
       boolean_node :best_offer_enabled, 'BestOfferEnabled', 'true', 'false', :optional => true

@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency("rake", ["~> 10.0"])
   s.add_development_dependency("activesupport", ["~> 3.0.0"])
-  s.add_development_dependency("libxml-ruby", ["~> 2.6"])
+  s.add_development_dependency("libxml-ruby")
   s.add_development_dependency("soap4r-ruby1.9", ["~> 2.0.0"])
 
 end
