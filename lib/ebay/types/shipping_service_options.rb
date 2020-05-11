@@ -11,7 +11,6 @@ module Ebay # :nodoc:
     #  boolean_node :expedited_service, 'ExpeditedService', 'true', 'false', :optional => true
     #  numeric_node :shipping_time_min, 'ShippingTimeMin', :optional => true
     #  numeric_node :shipping_time_max, 'ShippingTimeMax', :optional => true
-    #  money_node :shipping_surcharge, 'ShippingSurcharge', :optional => true
     #  boolean_node :free_shipping, 'FreeShipping', 'true', 'false', :optional => true
     #  boolean_node :local_pickup, 'LocalPickup', 'true', 'false', :optional => true
     #  money_node :import_charge, 'ImportCharge', :optional => true
@@ -30,7 +29,6 @@ module Ebay # :nodoc:
       boolean_node :expedited_service, 'ExpeditedService', 'true', 'false', :optional => true
       numeric_node :shipping_time_min, 'ShippingTimeMin', :optional => true
       numeric_node :shipping_time_max, 'ShippingTimeMax', :optional => true
-      money_node :shipping_surcharge, 'ShippingSurcharge', :optional => true
       boolean_node :free_shipping, 'FreeShipping', 'true', 'false', :optional => true
       boolean_node :local_pickup, 'LocalPickup', 'true', 'false', :optional => true
       money_node :import_charge, 'ImportCharge', :optional => true

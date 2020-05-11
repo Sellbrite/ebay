@@ -1,3 +1,4 @@
+require 'ebay/types/offer_discounts'
 require 'ebay/types/user'
 
 module Ebay # :nodoc:
@@ -7,6 +8,7 @@ module Ebay # :nodoc:
     #  text_node :currency, 'Currency', :optional => true
     #  text_node :item_id, 'ItemID', :optional => true
     #  money_node :max_bid, 'MaxBid', :optional => true
+    #  object_node :discounts, 'Discounts', :class => OfferDiscounts, :optional => true
     #  numeric_node :quantity, 'Quantity', :optional => true
     #  boolean_node :second_chance_enabled, 'SecondChanceEnabled', 'true', 'false', :optional => true
     #  text_node :site_currency, 'SiteCurrency', :optional => true
@@ -28,6 +30,7 @@ module Ebay # :nodoc:
       text_node :currency, 'Currency', :optional => true
       text_node :item_id, 'ItemID', :optional => true
       money_node :max_bid, 'MaxBid', :optional => true
+      object_node :discounts, 'Discounts', :class => OfferDiscounts, :optional => true
       numeric_node :quantity, 'Quantity', :optional => true
       boolean_node :second_chance_enabled, 'SecondChanceEnabled', 'true', 'false', :optional => true
       text_node :site_currency, 'SiteCurrency', :optional => true

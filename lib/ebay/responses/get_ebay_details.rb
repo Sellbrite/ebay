@@ -44,6 +44,7 @@ module Ebay # :nodoc:
     #  array_node :shipping_package_details, 'ShippingPackageDetails', :class => ShippingPackageDetails, :default_value => []
     #  array_node :shipping_carrier_details, 'ShippingCarrierDetails', :class => ShippingCarrierDetails, :default_value => []
     #  object_node :return_policy_details, 'ReturnPolicyDetails', :class => ReturnPolicyDetails, :optional => true
+    #  object_node :international_return_policy_details, 'InternationalReturnPolicyDetails', :class => ReturnPolicyDetails, :optional => true
     #  array_node :listing_start_price_details, 'ListingStartPriceDetails', :class => ListingStartPriceDetails, :default_value => []
     #  array_node :buyer_requirement_details, 'BuyerRequirementDetails', :class => SiteBuyerRequirementDetails, :default_value => []
     #  array_node :listing_feature_details, 'ListingFeatureDetails', :class => ListingFeatureDetails, :default_value => []
@@ -74,6 +75,7 @@ module Ebay # :nodoc:
       array_node :shipping_package_details, 'ShippingPackageDetails', :class => ShippingPackageDetails, :default_value => []
       array_node :shipping_carrier_details, 'ShippingCarrierDetails', :class => ShippingCarrierDetails, :default_value => []
       object_node :return_policy_details, 'ReturnPolicyDetails', :class => ReturnPolicyDetails, :optional => true
+      object_node :international_return_policy_details, 'InternationalReturnPolicyDetails', :class => ReturnPolicyDetails, :optional => true
       array_node :listing_start_price_details, 'ListingStartPriceDetails', :class => ListingStartPriceDetails, :default_value => []
       array_node :buyer_requirement_details, 'BuyerRequirementDetails', :class => SiteBuyerRequirementDetails, :default_value => []
       array_node :listing_feature_details, 'ListingFeatureDetails', :class => ListingFeatureDetails, :default_value => []

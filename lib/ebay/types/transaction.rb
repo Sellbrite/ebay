@@ -97,6 +97,8 @@ module Ebay # :nodoc:
     #  boolean_node :gift, 'Gift', 'true', 'false', :optional => true
     #  boolean_node :guaranteed_shipping, 'GuaranteedShipping', 'true', 'false', :optional => true
     #  boolean_node :guaranteed_delivery, 'GuaranteedDelivery', 'true', 'false', :optional => true
+    #  boolean_node :ebay_collect_and_remit_tax, 'eBayCollectAndRemitTax', 'true', 'false', :optional => true
+    #  object_node :ebay_collect_and_remit_taxes, 'eBayCollectAndRemitTaxes', :class => Taxes, :optional => true
     class Transaction
       include XML::Mapping
       include Initializer
@@ -173,6 +175,8 @@ module Ebay # :nodoc:
       boolean_node :gift, 'Gift', 'true', 'false', :optional => true
       boolean_node :guaranteed_shipping, 'GuaranteedShipping', 'true', 'false', :optional => true
       boolean_node :guaranteed_delivery, 'GuaranteedDelivery', 'true', 'false', :optional => true
+      boolean_node :ebay_collect_and_remit_tax, 'eBayCollectAndRemitTax', 'true', 'false', :optional => true
+      object_node :ebay_collect_and_remit_taxes, 'eBayCollectAndRemitTaxes', :class => Taxes, :optional => true
     end
   end
 end

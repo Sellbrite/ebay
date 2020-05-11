@@ -7,6 +7,8 @@ module Ebay # :nodoc:
       Basic = 'Basic'
       Featured = 'Featured'
       Anchor = 'Anchor'
+      Starter = 'Starter'
+      Enterprise = 'Enterprise'
     end
   end
 end

@@ -134,6 +134,16 @@ module Ebay # :nodoc:
     #  boolean_node :digital_good_delivery_enabled, 'DigitalGoodDeliveryEnabled', 'true', 'false', :optional => true
     #  boolean_node :epid_supported, 'EpidSupported', 'true', 'false', :optional => true
     #  boolean_node :k_type_supported, 'KTypeSupported', 'true', 'false', :optional => true
+    #  text_node :product_required_enabled, 'ProductRequiredEnabled', :optional => true
+    #  value_array_node :domestic_returns_accepted_values, 'DomesticReturnsAcceptedValues', 'DomesticReturnsAccepted', :default_value => []
+    #  value_array_node :international_returns_accepted_values, 'InternationalReturnsAcceptedValues', 'InternationalReturnsAccepted', :default_value => []
+    #  value_array_node :domestic_returns_duration_values, 'DomesticReturnsDurationValues', 'DomesticReturnsDuration', :default_value => []
+    #  value_array_node :international_returns_duration_values, 'InternationalReturnsDurationValues', 'InternationalReturnsDuration', :default_value => []
+    #  value_array_node :domestic_returns_shipment_payee_values, 'DomesticReturnsShipmentPayeeValues', 'DomesticReturnsShipmentPayee', :default_value => []
+    #  value_array_node :international_returns_shipment_payee_values, 'InternationalReturnsShipmentPayeeValues', 'InternationalReturnsShipmentPayee', :default_value => []
+    #  value_array_node :domestic_refund_method_values, 'DomesticRefundMethodValues', 'DomesticRefundMethod', :default_value => []
+    #  value_array_node :international_refund_method_values, 'InternationalRefundMethodValues', 'InternationalRefundMethod', :default_value => []
+    #  boolean_node :return_policy_description_enabled, 'ReturnPolicyDescriptionEnabled', 'true', 'false', :optional => true
     class CategoryFeature
       include XML::Mapping
       include Initializer
@@ -266,6 +276,16 @@ module Ebay # :nodoc:
       boolean_node :digital_good_delivery_enabled, 'DigitalGoodDeliveryEnabled', 'true', 'false', :optional => true
       boolean_node :epid_supported, 'EpidSupported', 'true', 'false', :optional => true
       boolean_node :k_type_supported, 'KTypeSupported', 'true', 'false', :optional => true
+      text_node :product_required_enabled, 'ProductRequiredEnabled', :optional => true
+      value_array_node :domestic_returns_accepted_values, 'DomesticReturnsAcceptedValues', 'DomesticReturnsAccepted', :default_value => []
+      value_array_node :international_returns_accepted_values, 'InternationalReturnsAcceptedValues', 'InternationalReturnsAccepted', :default_value => []
+      value_array_node :domestic_returns_duration_values, 'DomesticReturnsDurationValues', 'DomesticReturnsDuration', :default_value => []
+      value_array_node :international_returns_duration_values, 'InternationalReturnsDurationValues', 'InternationalReturnsDuration', :default_value => []
+      value_array_node :domestic_returns_shipment_payee_values, 'DomesticReturnsShipmentPayeeValues', 'DomesticReturnsShipmentPayee', :default_value => []
+      value_array_node :international_returns_shipment_payee_values, 'InternationalReturnsShipmentPayeeValues', 'InternationalReturnsShipmentPayee', :default_value => []
+      value_array_node :domestic_refund_method_values, 'DomesticRefundMethodValues', 'DomesticRefundMethod', :default_value => []
+      value_array_node :international_refund_method_values, 'InternationalRefundMethodValues', 'InternationalRefundMethod', :default_value => []
+      boolean_node :return_policy_description_enabled, 'ReturnPolicyDescriptionEnabled', 'true', 'false', :optional => true
     end
   end
 end

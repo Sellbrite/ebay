@@ -1,13 +1,13 @@
 require 'ebay/types/attribute_set'
 require 'ebay/types/attribute'
 require 'ebay/types/lookup_attribute'
-require 'ebay/types/payment_details'
 require 'ebay/types/bidding_details'
 require 'ebay/types/charity'
 require 'ebay/types/cross_promotions'
 require 'ebay/types/distance'
 require 'ebay/types/listing_details'
 require 'ebay/types/listing_designer'
+require 'ebay/types/payment_details'
 require 'ebay/types/category'
 require 'ebay/types/product_listing_details'
 require 'ebay/types/revise_status'
@@ -48,9 +48,7 @@ module Ebay # :nodoc:
     #  array_node :attributes, 'AttributeArray', 'Attribute', :class => Attribute, :default_value => []
     #  array_node :lookup_attributes, 'LookupAttributeArray', 'LookupAttribute', :class => LookupAttribute, :default_value => []
     #  boolean_node :auto_pay, 'AutoPay', 'true', 'false', :optional => true
-    #  object_node :payment_details, 'PaymentDetails', :class => PaymentDetails, :optional => true
     #  object_node :bidding_details, 'BiddingDetails', :class => BiddingDetails, :optional => true
-    #  boolean_node :motors_germany_searchable, 'MotorsGermanySearchable', 'true', 'false', :optional => true
     #  text_node :buyer_protection, 'BuyerProtection', :optional => true
     #  money_node :buy_it_now_price, 'BuyItNowPrice', :optional => true
     #  boolean_node :category_mapping_allowed, 'CategoryMappingAllowed', 'true', 'false', :optional => true
@@ -72,6 +70,7 @@ module Ebay # :nodoc:
     #  numeric_node :lot_size, 'LotSize', :optional => true
     #  text_node :partner_code, 'PartnerCode', :optional => true
     #  text_node :partner_name, 'PartnerName', :optional => true
+    #  object_node :payment_details, 'PaymentDetails', :class => PaymentDetails, :optional => true
     #  value_array_node :payment_methods, 'PaymentMethods', :default_value => []
     #  text_node :paypal_email_address, 'PayPalEmailAddress', :optional => true
     #  object_node :primary_category, 'PrimaryCategory', :class => Category, :optional => true
@@ -113,11 +112,8 @@ module Ebay # :nodoc:
     #  boolean_node :relisted, 'Relisted', 'true', 'false', :optional => true
     #  numeric_node :quantity_available, 'QuantityAvailable', :optional => true
     #  text_node :sku, 'SKU', :optional => true
-    #  boolean_node :category_based_attributes_prefill, 'CategoryBasedAttributesPrefill', 'true', 'false', :optional => true
     #  object_node :search_details, 'SearchDetails', :class => SearchDetails, :optional => true
     #  text_node :postal_code, 'PostalCode', :optional => true
-    #  boolean_node :shipping_terms_in_description, 'ShippingTermsInDescription', 'true', 'false', :optional => true
-    #  text_node :seller_inventory_id, 'SellerInventoryID', :optional => true
     #  object_node :picture_details, 'PictureDetails', :class => PictureDetails, :optional => true
     #  numeric_node :dispatch_time_max, 'DispatchTimeMax', :optional => true
     #  boolean_node :best_offer_enabled, 'BestOfferEnabled', 'true', 'false', :optional => true
@@ -178,8 +174,7 @@ module Ebay # :nodoc:
     #  text_node :reason_hide_from_search, 'ReasonHideFromSearch', :optional => true
     #  boolean_node :include_recommendations, 'IncludeRecommendations', 'true', 'false', :optional => true
     #  object_node :pickup_in_store_details, 'PickupInStoreDetails', :class => PickupInStoreDetails, :optional => true
-    #  boolean_node :ebay_now_eligible, 'eBayNowEligible', 'true', 'false', :optional => true
-    #  boolean_node :ebay_now_available, 'eBayNowAvailable', 'true', 'false', :optional => true
+    #  numeric_node :site_id, 'SiteId', :optional => true
     #  boolean_node :ignore_quantity, 'IgnoreQuantity', 'true', 'false', :optional => true
     #  boolean_node :available_for_pickup_drop_off, 'AvailableForPickupDropOff', 'true', 'false', :optional => true
     #  boolean_node :eligible_for_pickup_drop_off, 'EligibleForPickupDropOff', 'true', 'false', :optional => true
@@ -188,6 +183,7 @@ module Ebay # :nodoc:
     #  boolean_node :ebay_plus, 'eBayPlus', 'true', 'false', :optional => true
     #  boolean_node :ebay_plus_eligible, 'eBayPlusEligible', 'true', 'false', :optional => true
     #  boolean_node :e_mail_delivery_available, 'eMailDeliveryAvailable', 'true', 'false', :optional => true
+    #  boolean_node :is_secure_description, 'IsSecureDescription', 'true', 'false', :optional => true
     class Item
       include XML::Mapping
       include Initializer
@@ -197,9 +193,7 @@ module Ebay # :nodoc:
       array_node :attributes, 'AttributeArray', 'Attribute', :class => Attribute, :default_value => []
       array_node :lookup_attributes, 'LookupAttributeArray', 'LookupAttribute', :class => LookupAttribute, :default_value => []
       boolean_node :auto_pay, 'AutoPay', 'true', 'false', :optional => true
-      object_node :payment_details, 'PaymentDetails', :class => PaymentDetails, :optional => true
       object_node :bidding_details, 'BiddingDetails', :class => BiddingDetails, :optional => true
-      boolean_node :motors_germany_searchable, 'MotorsGermanySearchable', 'true', 'false', :optional => true
       text_node :buyer_protection, 'BuyerProtection', :optional => true
       money_node :buy_it_now_price, 'BuyItNowPrice', :optional => true
       boolean_node :category_mapping_allowed, 'CategoryMappingAllowed', 'true', 'false', :optional => true
@@ -221,6 +215,7 @@ module Ebay # :nodoc:
       numeric_node :lot_size, 'LotSize', :optional => true
       text_node :partner_code, 'PartnerCode', :optional => true
       text_node :partner_name, 'PartnerName', :optional => true
+      object_node :payment_details, 'PaymentDetails', :class => PaymentDetails, :optional => true
       value_array_node :payment_methods, 'PaymentMethods', :default_value => []
       text_node :paypal_email_address, 'PayPalEmailAddress', :optional => true
       object_node :primary_category, 'PrimaryCategory', :class => Category, :optional => true
@@ -262,11 +257,8 @@ module Ebay # :nodoc:
       boolean_node :relisted, 'Relisted', 'true', 'false', :optional => true
       numeric_node :quantity_available, 'QuantityAvailable', :optional => true
       text_node :sku, 'SKU', :optional => true
-      boolean_node :category_based_attributes_prefill, 'CategoryBasedAttributesPrefill', 'true', 'false', :optional => true
       object_node :search_details, 'SearchDetails', :class => SearchDetails, :optional => true
       text_node :postal_code, 'PostalCode', :optional => true
-      boolean_node :shipping_terms_in_description, 'ShippingTermsInDescription', 'true', 'false', :optional => true
-      text_node :seller_inventory_id, 'SellerInventoryID', :optional => true
       object_node :picture_details, 'PictureDetails', :class => PictureDetails, :optional => true
       numeric_node :dispatch_time_max, 'DispatchTimeMax', :optional => true
       boolean_node :best_offer_enabled, 'BestOfferEnabled', 'true', 'false', :optional => true
@@ -327,8 +319,7 @@ module Ebay # :nodoc:
       text_node :reason_hide_from_search, 'ReasonHideFromSearch', :optional => true
       boolean_node :include_recommendations, 'IncludeRecommendations', 'true', 'false', :optional => true
       object_node :pickup_in_store_details, 'PickupInStoreDetails', :class => PickupInStoreDetails, :optional => true
-      boolean_node :ebay_now_eligible, 'eBayNowEligible', 'true', 'false', :optional => true
-      boolean_node :ebay_now_available, 'eBayNowAvailable', 'true', 'false', :optional => true
+      numeric_node :site_id, 'SiteId', :optional => true
       boolean_node :ignore_quantity, 'IgnoreQuantity', 'true', 'false', :optional => true
       boolean_node :available_for_pickup_drop_off, 'AvailableForPickupDropOff', 'true', 'false', :optional => true
       boolean_node :eligible_for_pickup_drop_off, 'EligibleForPickupDropOff', 'true', 'false', :optional => true
@@ -337,6 +328,7 @@ module Ebay # :nodoc:
       boolean_node :ebay_plus, 'eBayPlus', 'true', 'false', :optional => true
       boolean_node :ebay_plus_eligible, 'eBayPlusEligible', 'true', 'false', :optional => true
       boolean_node :e_mail_delivery_available, 'eMailDeliveryAvailable', 'true', 'false', :optional => true
+      boolean_node :is_secure_description, 'IsSecureDescription', 'true', 'false', :optional => true
     end
   end
 end
