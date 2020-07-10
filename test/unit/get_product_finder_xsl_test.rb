@@ -9,6 +9,8 @@ class GetProductFinderXSLTest < Test::Unit::TestCase
   end
 	
   def test_get_product_finder_xsl
+    omit('Deprecated method')
+
     HttpMock.respond_with responses(:get_product_finder_xsl)
     response = @ebay.get_product_finder_xsl(:detail_level => 'ReturnAll')
     assert_equal 1, response.xsl_files.size
