@@ -9,6 +9,8 @@ class GetAttributesXSLTest < Test::Unit::TestCase
   end
 	
   def test_get_attributes_xsl
+    omit('Deprecated method')
+
     HttpMock.respond_with responses(:get_attributes_xsl)
     response = @ebay.get_attributes_xsl(:detail_level => 'ReturnAll')
     assert_equal 1, response.xsl_files.size
