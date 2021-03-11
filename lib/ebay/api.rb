@@ -185,7 +185,7 @@ module Ebay #:nodoc:
     end
 
     def connection(refresh = false)
-      @connection = Connection.new(service_uri, nil, http_options) if refresh || @connection.nil?
+      @connection = Connection.new(service_uri, http_options) if refresh || @connection.nil?
       @connection
     end
 

@@ -5,12 +5,11 @@ require 'uri'
 
 module Ebay #:nodoc:
   class ConnectionError < StandardError #:nodoc:
-    attr_reader :response, :http_options
+    attr_reader :response
 
-    def initialize(response, message = nil, http_options = {})
+    def initialize(response, message = nil)
       @response = response
       @message  = message
-      @http_options = http_options
     end
 
     def to_s
@@ -28,8 +27,11 @@ module Ebay #:nodoc:
   end
 
   class Connection #:nodoc:
-    def initialize(site)
+    attr_reader :http_options
+
+    def initialize(site, http_options = {})
       @site = site
+      @http_options = http_options
     end
 
     def post(path, body, headers)
