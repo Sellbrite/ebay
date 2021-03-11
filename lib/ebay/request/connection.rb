@@ -27,8 +27,11 @@ module Ebay #:nodoc:
   end
 
   class Connection #:nodoc:
-    def initialize(site)
+    attr_reader :http_options
+
+    def initialize(site, http_options = {})
       @site = site
+      @http_options = http_options
     end
 
     def post(path, body, headers)
@@ -54,9 +57,14 @@ module Ebay #:nodoc:
     end
 
     def http
-      http             = Net::HTTP.new(@site.host, @site.port)
-      http.use_ssl     = @site.is_a?(URI::HTTPS)
-      http.verify_mode = OpenSSL::SSL::VERIFY_NONE #if http.use_ssl?
+      http              = Net::HTTP.new(@site.host, @site.port)
+      http.use_ssl      = @site.is_a?(URI::HTTPS)
+      http.verify_mode  = OpenSSL::SSL::VERIFY_NONE #if http.use_ssl?
+      if http_options.present?
+        http_options.each do |key, value|
+          http.send("#{key}=", value) if http.respond_to?(key)
+        end
+      end
       http
     end
   end

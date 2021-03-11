@@ -50,7 +50,7 @@ module Ebay #:nodoc:
       alias_method :ru_name=, :runame=
     end
 
-    attr_reader :auth_token, :site_id, :using_oauth2, :keyset
+    attr_reader :auth_token, :site_id, :using_oauth2, :keyset, :http_options
 
     self.sandbox_url = 'https://api.sandbox.ebay.com/ws/api.dll'
     self.production_url = 'https://api.ebay.com/ws/api.dll'
@@ -126,6 +126,7 @@ module Ebay #:nodoc:
       @site_id      = options[:site_id] || self.class.site_id
       @using_oauth2 = options[:using_oauth2] || false
       @keyset       = options[:keyset] || {}
+      @http_options = options[:http_options] || {}
     end
 
     # Returns the URL used to sign-in to eBay to fetch a user token
@@ -184,7 +185,7 @@ module Ebay #:nodoc:
     end
 
     def connection(refresh = false)
-      @connection = Connection.new(service_uri) if refresh || @connection.nil?
+      @connection = Connection.new(service_uri, http_options) if refresh || @connection.nil?
       @connection
     end
 
