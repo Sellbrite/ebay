@@ -5,11 +5,12 @@ require 'uri'
 
 module Ebay #:nodoc:
   class ConnectionError < StandardError #:nodoc:
-    attr_reader :response
+    attr_reader :response, :http_options
 
-    def initialize(response, message = nil)
+    def initialize(response, message = nil, http_options = {})
       @response = response
       @message  = message
+      @http_options = http_options
     end
 
     def to_s
@@ -57,7 +58,11 @@ module Ebay #:nodoc:
       http              = Net::HTTP.new(@site.host, @site.port)
       http.use_ssl      = @site.is_a?(URI::HTTPS)
       http.verify_mode  = OpenSSL::SSL::VERIFY_NONE #if http.use_ssl?
-      http.read_timeout = 120
+      if http_options.present?
+        http_options.each do |key, value|
+          http.send("#{key}=", value) if http.respond_to?(key)
+        end
+      end
       http
     end
   end
