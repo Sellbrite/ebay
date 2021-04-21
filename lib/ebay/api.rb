@@ -204,7 +204,11 @@ module Ebay #:nodoc:
     def parse(content, format)
       case format
       when :object
-        xml = REXML::Document.new(content)
+        begin
+          xml = REXML::Document.new(content)
+        rescue REXML::ParseException => e
+          log_to_s3(content)
+        end
         # Fixes the wrong case of API returned by eBay
         fix_root_element_name(xml)
         result = XML::Mapping.load_object_from_xml(xml.root)
@@ -226,6 +230,11 @@ module Ebay #:nodoc:
 
       # Fix lowercased Xsl in response document
       xml.root.name = xml.root.name.gsub(/XslResponse$/, 'XSLResponse')
+    end
+
+    def log_to_s3(data)
+      path = ["ebay", "import_listing", "xml_parse_exception"]
+      ApiLogger.log(s3_path: path, payload: data)
     end
   end
 end
