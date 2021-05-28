@@ -50,7 +50,7 @@ module Ebay #:nodoc:
       alias_method :ru_name=, :runame=
     end
 
-    attr_reader :auth_token, :site_id, :using_oauth2, :keyset
+    attr_reader :auth_token, :site_id, :using_oauth2, :keyset, :http_options, :merchant_id
 
     self.sandbox_url = 'https://api.sandbox.ebay.com/ws/api.dll'
     self.production_url = 'https://api.ebay.com/ws/api.dll'
@@ -126,6 +126,8 @@ module Ebay #:nodoc:
       @site_id      = options[:site_id] || self.class.site_id
       @using_oauth2 = options[:using_oauth2] || false
       @keyset       = options[:keyset] || {}
+      @http_options = options[:http_options] || {}
+      @merchant_id  = options[:merchant_id]
     end
 
     # Returns the URL used to sign-in to eBay to fetch a user token
@@ -184,7 +186,7 @@ module Ebay #:nodoc:
     end
 
     def connection(refresh = false)
-      @connection = Connection.new(service_uri) if refresh || @connection.nil?
+      @connection = Connection.new(service_uri, http_options) if refresh || @connection.nil?
       @connection
     end
 
@@ -203,7 +205,11 @@ module Ebay #:nodoc:
     def parse(content, format)
       case format
       when :object
-        xml = REXML::Document.new(content)
+        begin
+          xml = REXML::Document.new(content)
+        rescue REXML::ParseException => e
+          log_to_s3(content)
+        end
         # Fixes the wrong case of API returned by eBay
         fix_root_element_name(xml)
         result = XML::Mapping.load_object_from_xml(xml.root)
@@ -225,6 +231,11 @@ module Ebay #:nodoc:
 
       # Fix lowercased Xsl in response document
       xml.root.name = xml.root.name.gsub(/XslResponse$/, 'XSLResponse')
+    end
+
+    def log_to_s3(data)
+      path = [merchant_id, "ebay", "import_listing", "xml_parse_exception"]
+      ApiLogger.log(s3_path: path, payload: data)
     end
   end
 end
